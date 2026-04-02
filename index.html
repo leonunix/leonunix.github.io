@@ -150,6 +150,19 @@
     .project-card:hover::before { opacity: 1; }
     .card-fm::before  { background: linear-gradient(90deg, var(--blue), var(--green)); }
     .card-oq::before  { background: linear-gradient(90deg, var(--orange), var(--purple)); }
+    .card-py::before  { background: linear-gradient(90deg, #f7c843, #58a6ff); }
+    .card-go::before  { background: linear-gradient(90deg, #7ee787, #79c0ff); }
+
+    .project-grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .project-grid-two .project-card {
+      margin-bottom: 0;
+      height: 100%;
+    }
 
     .card-body {}
     .card-header {
@@ -212,6 +225,7 @@
     footer a:hover { color: var(--text); }
 
     @media (max-width: 580px) {
+      .project-grid-two { grid-template-columns: 1fr; }
       .project-card { grid-template-columns: 1fr; }
       .card-actions { flex-direction: row; align-items: center; }
     }
@@ -248,6 +262,72 @@
   <div class="projects-inner">
 
     <p class="section-label">Projects</p>
+
+    <div class="project-grid-two">
+      <!-- ConoHa Python SDK -->
+      <div class="project-card card-py">
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-icon" style="background:rgba(247,200,67,0.12);">🐍</div>
+            <div>
+              <div class="card-title">
+                conohav3-python-sdk
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Python SDK for the ConoHa VPS v3 API with broad endpoint coverage, automatic token refresh,
+            service catalog discovery, lazy-loaded clients, and typed exception handling.
+          </p>
+          <div class="card-tags">
+            <span class="tag">conoha</span>
+            <span class="tag">python-sdk</span>
+            <span class="tag">vps-api</span>
+            <span class="tag">100+ endpoints</span>
+            <span class="tag">MIT</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-ghost-sm" href="https://github.com/leonunix/conohav3-python-sdk" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- ConoHa Go SDK -->
+      <div class="project-card card-go">
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-icon" style="background:rgba(126,231,135,0.12);">🐹</div>
+            <div>
+              <div class="card-title">
+                conohav3-golang-sdk
+                <span>Go</span>
+              </div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Go SDK for the ConoHa VPS v3 API with support for 8 services, endpoint auto-discovery,
+            region-aware configuration, and a clean client flow for authentication and resource operations.
+          </p>
+          <div class="card-tags">
+            <span class="tag">conoha</span>
+            <span class="tag">golang-sdk</span>
+            <span class="tag">vps-api</span>
+            <span class="tag">8 services</span>
+            <span class="tag">MIT</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-ghost-sm" href="https://github.com/leonunix/conohav3-golang-sdk" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Fluent Manager -->
     <div class="project-card card-fm">
